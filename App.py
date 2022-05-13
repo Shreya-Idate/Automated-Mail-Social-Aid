@@ -21,23 +21,23 @@ flag=0
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'idateshreya@gmail.com'
-app.config['MAIL_PASSWORD'] = 'abcd394/*'
+app.config['MAIL_USERNAME'] = '' #mail username
+app.config['MAIL_PASSWORD'] = '' #mail password
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-DB_HOST = "localhost"
-DB_NAME = "Registered"
-DB_USER = "postgres"
-DB_PASS = "Percy394/*"
-DB_PORT = 5433
+DB_HOST = "" #database hostname
+DB_NAME = "" #database name
+DB_USER = "" #database username
+DB_PASS = "" #database password
+DB_PORT = 5433 #port no
 
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
 
 
 def send_mail():
-    df = pd.read_excel (r'C:\Users\dell\Downloads\MIN.xlsx')
+    df = pd.read_excel (r'') #excel file path
     today = datetime.date.today()
     print("Today = ",today)
     #Get the current Year
@@ -106,16 +106,11 @@ def admin():
     global flag
     if flag==0:
         return redirect(url_for('hello'))
-    #file = open("registered.csv","a")
-    #writer = csv.writer(file)
-    #writer.writerow((request.form.get("name"), request.form.get("dob"),request.form.get("email")))
-    #file.close()
-    #return "sucess"
+    
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    engine = create_engine("postgresql://postgres:Percy394/*@localhost:5433/Registered")
+    engine = create_engine("") #database connectivity path
     db = scoped_session(sessionmaker(bind=engine))
     registeredMembers=db.execute("SELECT * FROM Registered order by prn;")
-    # render template to display the all books
     return render_template("AdminDashboard3.html", registeredMembers=registeredMembers)
 
 @app.route("/mail")
@@ -150,9 +145,8 @@ def memberAdd():
     
     #create string update query with the values from form
     strSQL =("insert into registered(prn,name,birth_day,birth_month,birth_year,email) values ("+prn+",'"+name+"',"+birth_day+","+birth_month+","+birth_year+",'"+email+"')")
-    #strSQl= ("insert into registered values({},{},{},{},{},{})".format(str(prn), name, birth_day, birth_month, birth_year, email))
-    #Execute update query
     cur.execute(strSQL) 
+    
     #commit to database
     conn.commit() 
     try:
@@ -173,12 +167,9 @@ def memberModify(prn):
     global flag
     if flag==0:
         return redirect(url_for('hello'))
-    # select row from booklist table for bookid passed from list page
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur.execute("SELECT * FROM Registered where prn=prn",{"prn":prn})
     cur.fetchall()
-    #cur.execute("SELECT * FROM Registered where prn=prn",{"prn":prn}).fetchall()
-    #display data in modify page passing the tuple as parameter in render_template method
     return render_template("update3.html")  
 
 @app.route("/memberUpdate", methods=["POST"])
@@ -221,12 +212,10 @@ def display():
     global flag
     if flag==0:
         return redirect(url_for('hello'))
-    #select all books from books
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     engine = create_engine("postgresql://postgres:Percy394/*@localhost:5433/Registered")
     db = scoped_session(sessionmaker(bind=engine))
     registeredMembers=db.execute("SELECT * FROM Registered order by prn;")
-    # render template to display the all books
     return render_template("AdminDashboard3.html", registeredMembers=registeredMembers)   
 
 @app.route("/DownloadExcel")
@@ -234,7 +223,6 @@ def download():
     global flag
     if flag==0:
         return redirect(url_for('hello'))
-    #render_template("DownloadExcel.html")
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur.execute("SELECT * FROM Registered")
     result = cur.fetchall()
