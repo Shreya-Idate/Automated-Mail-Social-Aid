@@ -1,0 +1,7 @@
+Requirement already satisfied: Flask in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (2.0.3)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from Flask) (3.0.3)
+Requirement already satisfied: click>=7.1.2 in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from Flask) (8.0.4)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from Flask) (2.1.1)
+Requirement already satisfied: Werkzeug>=2.0 in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from Flask) (2.0.3)
+Requirement already satisfied: colorama in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from click>=7.1.2->Flask) (0.4.4)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\dell\desktop\sem 4\mini prj\venv\lib\site-packages (from Jinja2>=3.0->Flask) (2.1.1)

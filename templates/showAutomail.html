@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automail</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4MdqQOt7vbaLM4RV8xmViCj8wA7bx7zImA&usqp=CAU" alt="logo">
+                <h2>Helping Hands</h2>
+        </div>
+        <hr>
+        <ul>
+            <a href="{{url_for('admin')}}"><li><img src="/resources/folder1.webp" alt="">&nbsp;<h4>Dashboard</h4></li></a>
+            <a href="{{url_for('download')}}"><li><img src="/resources/Download3.png" alt="">&nbsp;<h4>Download Database</h4></li></a>
+            <a href="{{url_for('donations')}}"><li><img src="/resources/Donation2.jpg" alt="">&nbsp;<h4>Donations</h4></li></a>
+            <a href="{{url_for('hello')}}"><li><img src="/resources/logout.png" alt="">&nbsp;<h4>Logout</h4></li></a>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <img class="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/burger.svg" alt="Menu">
+            <h2>Dashboard</h2>
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search.." aria-label="Hello">
+                    <button type="submit"><img src="/resources/search.png" alt=""></button>
+                </div>
+                <div class="user">
+                    <img src="/resources/notifications.png" alt="">
+                    <div class="img-case">
+                        <img src="/resources/user.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+       <div class="main1">
+           <h1 >Happy Birthday !</h1>
+           <img src = "https://problog.ftdi.com/blog/wp-content/uploads/2016/08/ProFlowers-Blog-Post-1-Graphics-1.png?ref=organicgglunkwn&prid=pfseogglunkwn" width = "540" height = "300" alt="content">
+           <p> On behalf of the NSS unit i would like to wish you a very Happy Birthday!<br>
+             On such a special day help us to make someone's day better by extending your helping hand.
+                </p>
+           <h3>Believe That You Are A Blessing!</h3>
+                 
+                    Link for donation :
+                  <br>
+                <a href="https://forms.gle/49C4QArLQYkMzAb99">Donation Form</a>
+            </div>
+</div>
+</body>
+
+</html>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+}
+
+.icon-case img{
+    border-radius: 0%;
+    height: 60px;
+    width: 60px;
+}
+
+.brand-name h2{
+    font-size: 21px;
+    padding: 16px;
+    color: white;
+}
+
+hr {
+    margin: -1px;
+    border: none;
+    border-bottom: solid 1.3px #ffffff;
+    width: 210px;
+    align-self: center;
+  }
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    margin: 30px 0px 0px 15px;
+}
+
+li {
+    list-style: none;
+    
+}
+
+h1,
+h2 {
+    color: black;
+}
+
+.box h1{
+    font-size: 23px;
+}
+
+.title h2{
+    margin-left: 190px;
+}
+
+h3 {
+    color: black;
+    font-size: 10px;
+}
+
+li img{
+    border-radius: 0%;
+    height: 22px;
+    width: 22px;
+    margin-right: 15px ;
+}
+
+
+.btn1{
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 444px;
+}
+
+.btn {
+    background: #ef4a82;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    color: #ef4a82;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #ef4a82;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table {
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+th,td {
+    text-align: center;
+    padding: 8px;
+}
+table tr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table tr:last-child{
+    border: none;
+}
+
+.row:hover{
+    background: #47cebe;
+}
+
+.container .content .cards .card:hover{
+    /* transform: translateY(-1rem); */
+    transform: scale(1.1);
+    z-index: 9;
+}
+
+.side-menu {
+    position: fixed;
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu .brand-name {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.side-menu li {
+    font-size: 16.5px;
+    padding: 15px 17px 15px 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li:hover{
+    color: #ef4a82;
+    background: white;
+    border-radius: 30px 0px 0px 30px;
+    
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.container .header .nav .search input[type=text] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+
+.container .header .nav .search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header .nav .search button img {
+    width: 30px;
+    height: 30px;
+}
+
+.container .header .nav .user {
+    /* flex: 1; */
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .header .Image{
+    width: 25px;
+    height: 25px;
+    border-radius: 0%;
+    margin: 0px 12px 0px 24px;
+}
+
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0px 20px 0px 20px;
+}
+
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 2vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+    /* margin-bottom: 5vh; */
+}
+
+h4{
+    font-weight: lighter;
+}
+
+.main{
+    margin-top: 100px;
+}
+
+.main h1{
+    text-align: center;
+    font-size: 37px;
+    color: #ef4a82;    
+}
+
+.main p{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.main .para{
+    margin-top: 12px;
+}
+
+.container .content .cards {
+    padding: 20px 15px 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .cards .card {
+    width: 275px;
+    height: 155px;
+    /* background: white; */
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 12px;
+    /* box-shadow: -1rem 0 3rem #000; */
+    transition: all 0.6s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+}
+
+.container .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container .content .content-2 .members {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .new-students{
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+    .main1 h1{
+        color: black;
+        margin-top: 15px;
+    }
+
+    .main1 img{
+        margin-top: 30px;
+        height: 220px;
+        width: 450px;
+        border-radius: 0%;
+        align-items: center;
+        
+    }
+
+    .main1{
+        border: 2px solid rgb(33, 251, 178);
+        background: aquamarine;
+        width: 70%;
+        margin-left: 15%;
+        height: 480px;
+        text-align: center;
+        margin-top: 75px;
+    }
+
+    .main1 p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    }
+
+    .main1 h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    }
+
+    .main1 a{
+        text-decoration: underline;
+        color: blue;
+    }
+</style>

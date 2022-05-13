@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---link rel="stylesheet" href="styles.css"--->
+    <title>Admin Panel</title>
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+}
+
+.icon-case img{
+    border-radius: 0%;
+    height: 60px;
+    width: 60px;
+}
+
+.brand-name h2{
+    font-size: 21px;
+    padding: 16px;
+    color: white;
+}
+
+hr {
+    margin: -1px;
+    border: none;
+    border-bottom: solid 1.3px #ffffff;
+    width: 210px;
+    align-self: center;
+  }
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    margin: 30px 0px 0px 15px;
+}
+
+li {
+    list-style: none;
+    
+}
+
+h1,
+h2 {
+    color: black;
+}
+
+.box h1{
+    font-size: 23px;
+}
+
+.title h2{
+    margin-left: 190px;
+}
+
+h3 {
+    color: black;
+    font-size: 10px;
+}
+
+li img{
+    border-radius: 0%;
+    height: 22px;
+    width: 22px;
+    margin-right: 15px ;
+}
+
+
+.btn1{
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 444px;
+}
+
+.btn {
+    background: #ef4a82;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    color: #ef4a82;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #ef4a82;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table {
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+th,td {
+    text-align: center;
+    padding: 8px;
+}
+table tr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table tr:last-child{
+    border: none;
+}
+
+.row:hover{
+    background: #47cebe;
+}
+
+.container .content .cards .card:hover{
+    /* transform: translateY(-1rem); */
+    transform: scale(1.1);
+    z-index: 9;
+}
+
+.side-menu {
+    position: fixed;
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu .brand-name {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.side-menu li {
+    font-size: 16.5px;
+    padding: 15px 17px 15px 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li:hover{
+    color: #ef4a82;
+    background: white;
+    border-radius: 30px 0px 0px 30px;
+    
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.container .header .nav .search input[type=text] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+
+.container .header .nav .search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header .nav .search button img {
+    width: 30px;
+    height: 30px;
+}
+
+.container .header .nav .user {
+    /* flex: 1; */
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .header .Image{
+    width: 25px;
+    height: 25px;
+    border-radius: 0%;
+    margin: 0px 12px 0px 24px;
+}
+
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0px 20px 0px 20px;
+}
+
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 2vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+    /* margin-bottom: 5vh; */
+}
+
+h4{
+    font-weight: lighter;
+}
+
+.main{
+    margin-top: 100px;
+}
+
+.main h1{
+    text-align: center;
+    font-size: 37px;
+    color: #ef4a82;    
+}
+
+.main p{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.main .para{
+    margin-top: 12px;
+}
+
+.container .content .cards {
+    padding: 20px 15px 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .cards .card {
+    width: 275px;
+    height: 155px;
+    /* background: white; */
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 12px;
+    /* box-shadow: -1rem 0 3rem #000; */
+    transition: all 0.6s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+}
+
+.container .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container .content .content-2 .members {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .new-students{
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+    .side-menu li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .side-menu li span {
+        display: none;
+    }
+    .side-menu {
+        align-items: center;
+    }
+    .side-menu li img {
+        width: 40px;
+        height: 40px;
+    }
+    .side-menu li:hover {
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+
+@media screen and (max-width:536px) {
+    .brand-name h1 {
+        font-size: 16px;
+    }
+    .container .content .cards {
+        justify-content: center;
+    }
+    .side-menu li img {
+        width: 30px;
+        height: 30px;
+    }
+    
+}
+</style>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4MdqQOt7vbaLM4RV8xmViCj8wA7bx7zImA&usqp=CAU" alt="logo">
+                <h2>Helping Hands</h2>
+        </div>
+        <hr>
+        <ul>
+            <a href="{{url_for('admin')}}"><li><img src="/resources/folder1.webp" alt="">&nbsp;<h4>Dashboard</h4></li></a>
+            <a href="{{url_for('download')}}"><li><img src="/resources/Download3.png" alt="">&nbsp;<h4>Download Database</h4></li></a>
+            <a href="{{url_for('donations')}}"><li><img src="/resources/Donation2.jpg" alt="">&nbsp;<h4>Donations</h4></li></a>
+            <a href="{{url_for('hello')}}"><li><img src="/resources/logout.png" alt="">&nbsp;<h4>Logout</h4></li></a>
+    
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <img class="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/burger.svg" alt="Menu">
+            <h2>Dashboard</h2>
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search.." aria-label="Hello">
+                    <button type="submit"><img src="/resources/search.png" alt=""></button>
+                </div>
+                <div class="user">
+                    <img src="/resources/notifications.png" alt="">
+                    <div class="img-case">
+                        <img src="/resources/user.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+                    <h1>Automated Mail - Social Aid</h1>
+                    <p>
+                        Not all of us can do great things, but we can do small things with great love.
+                        </p>
+                        <p class="para"> 
+                        We are here to help you in making the world a better place. Reach out to us if you wish to donate something.
+                    </p> 
+                    
+        </div> 
+            
+        <div class="content">
+            <div class="cards">
+                <a href="{{url_for('memberInsert')}}">
+                    <div class="card">
+                        <div class="box">
+                            <h1  class="icon-case">Add Members</h1>
+                            <h3>(New Registered Members)</h3>
+                        </div>
+                        <div class="icon-case">
+                            <img src="/resources/Image3.webp" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('donations')}}">
+                    <div class="card">
+                        <div class="box">
+                            <h1>Donated List</h1>
+                            <h3>(Members list done with their<br>donations)</h3>
+                        </div>
+                        <div class="icon-case">
+                            <img src="/resources/List2.png" alt="">
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="{{url_for('displayMail')}}">
+                    <div class="card">
+                        <div class="box">
+                            <h1>Contents of <br> mail</h1>
+                            <h3>(Birthday wishes)</h3>  
+                        </div>
+                        <div class="icon-case">
+                            <img src="/resources/mail.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="content-2">
+                <div class="members">
+                    <div class="title">
+                        <h2>MEMBERS</h2>
+                        <a href="#" class="btn1">View All</a>
+                    </div>
+                    <table id="table" class="table table-striped table-hover">
+                        <thead class="thead-dark text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
+                          <tr class="border border-grey-600">
+                            <th scope="col" class="border border-grey-600">PRN</th>
+                            <th scope="col" class="border border-grey-600">Name</th>
+                            <th scope="col" class="border border-grey-600">Birth Date</th>
+                            <th scope="col" class="border border-grey-600">Birth Month</th>
+                            <th scope="col" class="border border-grey-600">Birth Year</th>
+                            <th scope="col" class="border border-grey-600">Email</th>
+                            <th scope="col" class="border border-grey-600"></th>
+                          </tr>
+                        </thead>
+                        
+                        {% for member in registeredMembers %}
+                        <tr class="border border-grey-600">
+                          <th scope="row">{{member.prn}}</th>
+                          <td class="border border-grey-600">{{member.name}}</td>
+                          <td class="border border-grey-600">{{member.birth_day}}</td>
+                          <td class="border border-grey-600">{{member.birth_month}}</td>
+                          <td class="border border-grey-600">{{member.birth_year}}</td>
+                          <td class="border border-grey-600">{{member.email}}</td>
+                          
+                          <td class="Edit"><b><a href="{{url_for('memberModify',  prn=member.prn)}}" class="btn">Modify</a></b></td> 
+                          <td class="Edit"><b><a href="{{url_for('memberDelete', prn=member.prn)}}" class="btn">Delete</a></b></td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
